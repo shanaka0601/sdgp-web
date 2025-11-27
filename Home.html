@@ -3,38 +3,146 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Quick Read Prescription Scanning System</title>
     <link rel="stylesheet" href="/css/home.css">
+  
 </head>
 <body>
-    <header>
-            <div class="header-container">
-                <div class="logo-container">
-                    <img src="/images/logo.png" alt="quick read prescription scanning system" class="logo-img" style="width: 150px; height: auto;">
-                 
-                </div>
-                <nav>
-                    <ul>
-                        <li><a href="home.html">Home</a></li>
-                        <li><a href="table.html">Features</a></li>
-                        <li><a href="team.html">Team</a></li>
-                        <li><a href="feedback.html">Feedback</a></li>
-                    </ul>
-                </nav>
+
+    <!-- NAVIGATION BAR -->
+    <header class="navbar glass">
+        <div class="nav-logo">
+            <img src="images/WHITE.png" alt="Quick Read Logo">
+        </div>
+        <div class="hamburger" onclick="toggleMenu(this)">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <nav class="nav-links">
+            <ul>
+                
+            
+                <li><a href="Home.html">Home</a></li>
+                <li><a href="">Overview</a></li>
+                <li><a href="">Project Scope</a></li>
+                <li><a href="">Team</a></li>
+                <li><a href="">Suggestions</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section id="hero" class="hero section">
+        <img src="/images/BLACK.png" class="hero-logo" alt="Project Logo">
+        <h1 class="hero-title">Quick Read Prescription Scanning System</h1>
+        <p class="hero-subtitle">Enhancing accuracy, efficiency, and safety in prescription handling</p>
+        <button class="hero-btn" onclick="document.getElementById('about').scrollIntoView({behavior:'smooth'})">
+            Learn More
+        </button>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section id="about" class="section glass">
+        <h2>Project Overview</h2>
+        <p>One of the major challenges in the healthcare industry is medication errors caused by unclear handwritten prescriptions. This system utilizes OCR and NLP technologies to accurately read, interpret, and transmit prescriptions digitally — reducing human errors and improving communication between healthcare professionals and pharmacies.</p>
+    </section>
+
+    <!-- PROJECT SCOPE -->
+    <section id="scope" class="section">
+        <h2>Project Scope</h2>
+        <div class="card-container">
+            <div class="glass card">
+                <h3>✅ In-Scope Features</h3>
+                <ul>
+                    <li>OCR + NLP Prescription Scanning</li>
+                    <li>User Interface for Uploading & Viewing</li>
+                    <li>Secure Digital Prescription Transfer</li>
+                    <li>Record Storage & Data Management</li>
+                    <li>Error Detection for Unclear Text</li>
+                    <li>Improved Accuracy, Efficiency & Safety</li>
+                </ul>
             </div>
-        </header>
+            <div class="glass card">
+                <h3>❌ Out-of-Scope Items</h3>
+                <ul>
+                    <li>Diagnosis or Drug Prescribing</li>
+                    <li>Payment or Insurance Processing</li>
+                    <li>Real-Time Consultations</li>
+                    <li>Drug Interaction Checks</li>
+                    <li>Full EHR Integration</li>
+                    <li>Clinical Decision Making</li>
+                </ul>
+            </div>
+        </div>
+    </section>
 
+        <section id="team" class="section glass">
+        <h1><bold>Meet Our Team</bold></h1>
+        <div class="team-grid">
+            <div class="team-card glass">
+                <img src="/images/team1.jpg" class="team-photo" alt="">
+                <h3>Anuruddha shanaka</h3>
+                <p>Research & Documentation</p>
+            </div>
+            <div class="team-card glass">
+                <img src="/images/mmber2.jpg" class="team-photo" alt="">
+                <h3>Dilnath Rathnayaka</h3>
+                <p>UI/UX & Frontend Development</p>
+            </div>
+            <div class="team-card glass">
+                <img src="/images/team3.jpg" class="team-photo" alt="">
+                <h3>Lishan Dimantha</h3>
+                <p>OCR/NLP Integration</p>
+            </div>
+            <div class="team-card glass">
+                <img src="/images/team4.jpg" class="team-photo" alt="">
+                <h3>Kushali Bandara</h3>
+                <p>Backend & Database</p>
+            </div>
+            <div class="team-card glass">
+                <img src="/images/team5.jpg" class="team-photo" alt="">
+                <h3>Nimashi Sankhapala</h3>
+                <p>Testing & Quality Assurance</p>
+            </div>
+            <div class="team-card glass">
+                <img src="/images/team6.jpg" class="team-photo" alt="">
+                <h3>Anjali Fernando</h3>
+                <p>Deployment & Maintenance</p>
+            </div>
+        </div>
+    </section>
 
-        <dev class="main">
-            <h1>Welcome to Quick Read Prescription Scanning System</h1>
-            <p>Your trusted solution for efficient prescription management.</p>
-            <img src="/images/homepage_image.png" alt="Prescription Scanning" class="home-image">
-            <h2>get the elements
-                <br>
-                <br>
-                <a href="table.html" class="cta-button">Explore Features</a>
-            </h2>
+    <!-- RECOMMENDATION SECTION -->
+    <section id="recommend" class="section glass">
+        <h2>Share Your Suggestions</h2>
+        <p>Your feedback helps us improve!</p>
+        <input type="text" class="input-field" placeholder="Enter your recommendation...">
+        <button class="submit-btn">Submit</button>
+    </section>
 
-        </dev>
+    
+
+    <!-- FOOTER -->
+    <footer>
+        © 2025 Quick Read Prescription Scanning System — All Rights Reserved
+    </footer>
+
+    <script>
+        function toggleMenu(menu) {
+            const nav = document.querySelector('.nav-links ul');
+            nav.style.display = nav.style.display === 'flex' ? 'none' : 'flex';
+            menu.classList.toggle('active');
+        }
+        // Smooth scroll for nav links
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', e => {
+                e.preventDefault();
+                document.querySelector(link.getAttribute('href')).scrollIntoView({behavior:'smooth'});
+                if(window.innerWidth <= 768) document.querySelector('.nav-links ul').style.display='none';
+            });
+        });
+    </script>
+
 </body>
 </html>

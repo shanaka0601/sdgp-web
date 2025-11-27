@@ -1,96 +1,336 @@
-/* Header styles */
-header {
-background: linear-gradient(rgba(255,255,255,0.6), rgba(255,255,255,0.6)), url('/images/background.jpg') center/cover no-repeat;
-background-color: #fff; /* fallback */
-color: #333;
-padding: 15px 20px;
-position: fixed;
-width: 100%;
-top: 0;
-left: 0;
-z-index: 9999;
-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-display: flex;
-align-items: center;
+/* =============================
+   GLOBAL STYLES
+============================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    scroll-behavior: smooth;
 }
 
-/* Image inside the navigation bar.
-    Example HTML:
-    <nav>
-      <div class="nav-image"><img src="images/nav-logo.png" alt="nav logo"></div>
-      <ul>...</ul>
-    </nav>
-*/
-nav .nav-image {
-  display: flex;
-  align-items: center;
-  margin-right: 12px;
+body {
+  
+  background: linear-gradient(rgba(0,0,0,0.25), rgba(0,0,0,0.25)),
+              url("/images/background1.jpg") center/cover no-repeat;
+
+    color: #efeeee;
+    overflow-x: hidden;
+    transition: all 0.5s ease-in-out;
 }
 
-nav .nav-image img {
-  height: 36px; /* adjust as needed */
-  width: auto;
-  display: block;
-  border-radius: 4px; /* optional */
+h1, h2, h3 {
+    font-weight: 600;
+    transition: all 0.3s ease;
 }
 
-.header-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
+.section {
+    padding: 80px 10%;
+    text-align: center;
+    transition: all 0.5s ease;
+}
+  .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+        .hamburger div {
+            width: 25px;
+            height: 3px;
+            background-color: white;
+            margin: 4px;
+            transition: 0.4s;
+        }
+        @media (max-width: 768px) {
+            .nav-links ul {
+                display: none;
+                flex-direction: column;
+                background: rgba(255,255,255,0.15);
+                position: absolute;
+                top: 70px;
+                right: 5%;
+                border-radius: 10px;
+                padding: 20px;
+            }
+            .hamburger {
+                display: flex;
+            }
+        }
+/* =============================
+   GLASS EFFECT
+============================= */
+.glass {
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 16px;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    padding: 30px;
+    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
 }
 
-.logo-container {
-  display: flex;
-  align-items: center;
+/* =============================
+   NAVIGATION BAR
+============================= */
+.navbar {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    transition: all 0.4s ease;
+    background: linear-gradient(rgba(48, 44, 44, 0.6), rgba(57, 52, 52, 0.6)), url('/images/background2.jpg') center/cover no-repeat;
 }
 
-.logo-img {
-  height: 60px;
-  margin-right: 15px;
+.nav-logo img {
+    width: 120px;
+    height: auto;
 }
 
-.logo-container h1 {
-  font-size: 24px;
-  white-space: nowrap;
+.nav-links ul {
+    display: flex;
+    gap: 25px;
+    list-style: none;
+    transition: all 0.3s ease;
 }
 
-/* Navigation styles */
-nav {
-  flex-grow: 1;
+.nav-links a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 18px;
+    position: relative;
 }
 
-nav ul {
-  list-style: none;
-  display: flex;
-  justify-content: flex-end;
-  gap: 20px;
-  flex-wrap: wrap;
+.nav-links a::after {
+    content: "";
+    width: 0;
+    height: 2px;
+    background: #d6a2e8;
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    transition: 0.4s ease;
 }
 
-nav ul li {
-  display: inline;
+.nav-links a:hover::after {
+    width: 100%;
 }
 
-nav ul li a {
-  text-decoration: none;
-  color: #333;
-  font-weight: bold;
-  padding: 10px 15px;
-  transition: 0.3s ease-in-out;
+/* =============================
+   HERO SECTION
+============================= */
+.hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-top: 100px;
+    transition: all 0.5s ease;
 }
 
-nav ul li a:hover {
-  background: #333;
-  color: #ff8000;
-  border-radius: 5px;
+.hero-logo {
+    width: 160px;
+    animation: pulse 3s infinite ease-in-out;
 }
 
-nav ul li a.active {
-  background: #333;
-  color: #ff8000;
-  border-radius: 5px;
+.hero-title {
+    font-size: 42px;
+    margin-top: 20px;
+}
+
+.hero-subtitle {
+    font-size: 20px;
+    opacity: 0.9;
+}
+
+.hero-btn {
+    margin-top: 25px;
+    padding: 12px 28px;
+    background: rgba(255, 255, 255, 0.3);
+    border: none;
+    border-radius: 25px;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    transition: all 0.4s ease;
+}
+
+.hero-btn:hover {
+    background: rgba(255, 255, 255, 0.5);
+    transform: scale(1.08);
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.08); opacity: 0.85; }
+}
+
+/* =============================
+   PROJECT SCOPE CARDS
+============================= */
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    margin-top: 40px;
+}
+
+.card ul {
+    list-style: none;
+    margin-top: 15px;
+}
+
+.card li {
+    margin: 8px 0;
+}
+
+/* =============================
+   TEAM SECTION HORIZONTAL SCROLLER
+============================= */
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    column-gap: 96px; /* larger horizontal spacing between cards */
+    row-gap: 64px;    /* larger vertical spacing between rows */
+    width: 100%;
+    padding: 48px 32px;
+    justify-items: center;
+    align-items: start;
+    background: transparent;
+    color: #ffffff;
+}
+
+/* For Webkit browsers */
+.team-grid::-webkit-scrollbar {
+    height: 10px;
+}
+
+.team-grid::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.team-grid::-webkit-scrollbar-thumb {
+    background-color: rgba(255,255,255,0.3);
+    border-radius: 10px;
+}
+
+/* Each team card shows 3.5 cards in viewport */
+.team-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 28px 22px;
+    border-radius: 14px;
+    transition: transform 0.28s ease, box-shadow 0.28s ease;
+    background-color: #c2bbbb; /* make cards visually separate */
+    width: 300px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    border: 1px solid rgba(18,18,18,0.04);
+}
+
+.team-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 30px rgba(214, 162, 232, 0.5);
+    background: rgba(109, 107, 107, 0.25);
+}
+
+.team-photo {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid rgba(255, 255, 255, 0.4);
+    margin-bottom: 18px;
+}
+
+/* Center the #team section and add a large gap under the fixed navbar */
+#team {
+    margin: 160px auto 40px; /* increase top margin to create a big gap under the fixed nav */
+    padding: 40px 20px;
+    max-width: 1100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 30px;
+}
+
+#team h2 { margin-bottom: 20px; }
+
+@media (max-width:900px) {
+    #team { margin-top: 120px; padding: 28px 16px; }
+}
+
+/* Reduce gaps on narrower screens for better fit */
+@media (max-width:900px) {
+    .team-grid { gap: 36px 28px; padding: 28px 16px; }
+}
+
+@media (max-width:520px) {
+    .team-grid { gap: 20px; padding: 20px 12px; }
+}
+
+@media (max-width:520px) {
+    #team { margin-top: 90px; }
+    .team-photo { height: 100px; width:100px; }
+}
+/* =============================
+   INPUT RECOMMENDATION FIELD
+============================= */
+.input-field {
+    width: 60%;
+    padding: 12px;
+    margin-top: 20px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    background: rgba(255, 255, 255, 0.25);
+    color: #ffffff;
+    font-size: 18px;
+    transition: all 0.3s ease;
+}
+
+.input-field:focus {
+    background: rgba(255, 255, 255, 0.4);
+}
+
+.submit-btn {
+    margin-top: 15px;
+    padding: 10px 24px;
+    border-radius: 10px;
+    border: none;
+    background: #d6a2e8;
+    color: #ffffff;
+    font-size: 18px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.submit-btn:hover {
+    background: #e0b3f0;
+    transform: scale(1.05);
+}
+
+/* =============================
+   FOOTER
+============================= */
+footer {
+    text-align: center;
+    padding: 25px;
+    font-size: 16px;
+    opacity: 0.85;
+    margin-top: 60px;
+    transition: all 0.3s ease;
+}
+footer a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
 }

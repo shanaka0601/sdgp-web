@@ -1,0 +1,134 @@
+.navbar {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    transition: all 0.4s ease;
+    background: linear-gradient(rgba(48, 44, 44, 0.6), rgba(57, 52, 52, 0.6)), url('/images/background2.jpg') center/cover no-repeat;
+}
+
+.nav-logo img {
+    width: 120px;
+    height: auto;
+}
+
+.nav-links ul {
+    display: flex;
+    gap: 25px;
+    list-style: none;
+    transition: all 0.3s ease;
+}
+
+.nav-links a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 18px;
+    position: relative;
+}
+
+.nav-links a::after {
+    content: "";
+    width: 0;
+    height: 2px;
+    background: #d6a2e8;
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    transition: 0.4s ease;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    column-gap: 96px; /* larger horizontal spacing between cards */
+    row-gap: 64px;    /* larger vertical spacing between rows */
+    width: 100%;
+    padding: 48px 32px;
+    justify-items: center;
+    align-items: start;
+    background: transparent;
+}
+
+/* For Webkit browsers */
+.team-grid::-webkit-scrollbar {
+    height: 10px;
+}
+
+.team-grid::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.team-grid::-webkit-scrollbar-thumb {
+    background-color: rgba(255,255,255,0.3);
+    border-radius: 10px;
+}
+
+/* Each team card shows 3.5 cards in viewport */
+.team-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 28px 22px;
+    border-radius: 14px;
+    transition: transform 0.28s ease, box-shadow 0.28s ease;
+    background-color: #ffffff; /* make cards visually separate */
+    width: 300px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    border: 1px solid rgba(18,18,18,0.04);
+}
+
+.team-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 30px rgba(214, 162, 232, 0.5);
+    background: rgba(109, 107, 107, 0.25);
+}
+
+.team-photo {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid rgba(255, 255, 255, 0.4);
+    margin-bottom: 18px;
+}
+
+/* Center the #team section and add a large gap under the fixed navbar */
+#team {
+    margin: 160px auto 40px; /* increase top margin to create a big gap under the fixed nav */
+    padding: 40px 20px;
+    max-width: 1100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 30px;
+}
+
+#team h2 { margin-bottom: 20px; }
+
+@media (max-width:900px) {
+    #team { margin-top: 120px; padding: 28px 16px; }
+}
+
+/* Reduce gaps on narrower screens for better fit */
+@media (max-width:900px) {
+    .team-grid { gap: 36px 28px; padding: 28px 16px; }
+}
+
+@media (max-width:520px) {
+    .team-grid { gap: 20px; padding: 20px 12px; }
+}
+
+@media (max-width:520px) {
+    #team { margin-top: 90px; }
+    .team-photo { height: 100px; width:100px; }
+}
+ 
